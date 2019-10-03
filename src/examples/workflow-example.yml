@@ -1,0 +1,15 @@
+description: >
+  Use the various build jobs in your config.yml workflow section.
+  See the orb's GitHub README for a version of this example with extensive usage and context comments:
+  https://github.com/netgaintechnology/orb-build-orb#examples
+
+usage:
+  version: 2.1
+
+  orbs:
+    build-orb: netgaintechnology/build-orb@x.y.z
+  workflows:
+    version: 2
+    builds:
+      jobs:
+        - build-orb/golang_build
