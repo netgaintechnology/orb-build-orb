@@ -1,0 +1,16 @@
+description: >
+  powershell linting
+
+executor: powershell
+
+parameters:
+  main-dir:
+    type: string
+    default: .
+    description: >
+      Directory within to lint all powershell files,
+      defaults to the working directory (.)
+
+steps:
+  - checkout
+  - run: return 1

@@ -1,0 +1,8 @@
+description: >
+  chef linting
+
+executor: chef
+
+steps:
+  - checkout
+  - run: kitchen test

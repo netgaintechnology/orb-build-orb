@@ -1,0 +1,23 @@
+description: |
+  terraform plan
+
+executor: terraform
+
+parameters:
+  main-dir:
+    type: string
+    default: .
+    description: |
+      Directory within to lint all terraform files,
+      defaults to the working directory (.)
+
+steps:
+  - update_alpine_and_checkout
+  - run: |
+    cat <<~EOF > ~/.terraformrc
+      # Terraform CLI config
+      credentials "app.terraform.io" {
+        token = "$TFIO_TOKEN"
+      }
+  - run: terraform init -upgrade <<parameters.main-dir>>
+  - run: terraform plan <<parameters.main-dir>>
