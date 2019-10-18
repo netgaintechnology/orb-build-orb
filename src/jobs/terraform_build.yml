@@ -14,10 +14,10 @@ parameters:
 steps:
   - update_alpine_and_checkout
   - run: |
-    cat \<<~EOF > ~/.terraformrc
-      # Terraform CLI config
-      credentials "app.terraform.io" {
-        token = "$TFIO_TOKEN"
-      }
+      cat \<<~EOF > ~/.terraformrc
+        # Terraform CLI config
+        credentials "app.terraform.io" {
+          token = "$TFIO_TOKEN"
+        }
   - run: terraform init -upgrade <<parameters.main-dir>>
   - run: terraform plan <<parameters.main-dir>>
