@@ -1,16 +1,16 @@
 description: >
-  golang building
+  ansible linting
 
-executor: golang
+executor: ansible
 
 parameters:
-  main-dir:
+  lint-dir:
     type: string
     default: .
     description: >
-      Directory within to lint all golang files,
+      Directory within to lint all ansible files,
       defaults to the working directory (.)
 
 steps:
   - update_alpine_and_checkout
-  - run: go build <<parameters.main-dir>>/...
+  - run: return 1

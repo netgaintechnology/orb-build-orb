@@ -1,4 +1,4 @@
 version: 2.1
 
-description: >
+description: |
   Orb for build jobs. Full orb source code: https://github.com/netgaintechnology/orb-build-orb
