@@ -13,14 +13,6 @@ parameters:
 
 steps:
   - update_alpine_and_checkout
-  - run: echo $CIRCLE_BRANCH
-  - run: echo $CIRCLE_PULL_REQUEST
-  - run: |
-      if [[ $(echo "$CIRCLE_BRANCH" | grep -c "pull") -gt 0 ]]; then
-        echo "Skip doing stuff since it is a PR."
-      else
-        echo "Not a PR, so now do what I want."
-      fi
   - run: |
       cat \<<~EOF > ~/.terraformrc
         # Terraform CLI config
