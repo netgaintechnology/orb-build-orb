@@ -13,6 +13,9 @@ parameters:
 
 steps:
   - update_alpine_and_checkout
+  - run: echo $CIRCLE_BRANCH
+  - run: echo $CIRCLE_PULL_REQUEST
+  - run: ehco $CIRCLE_PULL_REQUESTS
   - run: |
       cat \<<~EOF > ~/.terraformrc
         # Terraform CLI config
