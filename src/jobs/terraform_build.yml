@@ -27,6 +27,6 @@ steps:
         credentials "app.terraform.io" {
           token = "$TFIO_TOKEN"
         }
-  - run: terraform workspace new dev
+  - run: terraform workspace new prod
   - run: terraform init -upgrade <<parameters.main-dir>>
   - run: terraform plan <<parameters.main-dir>>
