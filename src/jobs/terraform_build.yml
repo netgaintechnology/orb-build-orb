@@ -47,4 +47,4 @@ steps:
               
   - run: terraform workspace new <<parameters.tf-workspace>>
   - run: terraform init -upgrade <<parameters.main-dir>>
-  - run: terraform plan -input=flase <<parameters.main-dir>>
+  - run: terraform plan -input=false <<parameters.main-dir>>
