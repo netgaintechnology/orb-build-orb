@@ -72,5 +72,9 @@ steps:
       command: ansible --version
   - run:
       name: Validate Packer config.json
-      command: packer validate config.json
+      command: packer validate config.json -var 'ami_name=$CIRCLE_PROJECT_REPONAME.$CIRCLE_BRANCH'
+  - run:
+      name: Build AMI
+      command: packer validate config.json -var 'ami_name=$CIRCLE_PROJECT_REPONAME.$CIRCLE_BRANCH'
+      no_output_timeout: 120m
 
