@@ -71,10 +71,14 @@ steps:
   - run:
       command: ansible --version
   - run:
+      name: Set AMI name
+      command: echo "{"ami_name":"" "$CIRCLE_PROJECT_REPONAME.$CIRCLE_BRANCH"}"  > ~/vars.json
+  - run:
       name: Validate Packer config.json
-      command: packer validate config.json -var 'ami_name=$CIRCLE_PROJECT_REPONAME.$CIRCLE_BRANCH'
+      command: |
+        packer validate -var-file ~/vars.json config.json
   - run:
       name: Build AMI
-      command: packer validate config.json -var 'ami_name=$CIRCLE_PROJECT_REPONAME.$CIRCLE_BRANCH'
+      command: |
+        packer build -var-file ~/vars.json config.json
       no_output_timeout: 120m
-
