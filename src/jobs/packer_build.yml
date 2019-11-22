@@ -78,3 +78,4 @@ steps:
   - run:
       name: Validate Packer config.json
       command: packer validate config.json
+
