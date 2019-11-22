@@ -45,7 +45,7 @@ steps:
   - run:
       name: Update system packages
       command: |
-        apk add --update git bash openssl curl openssh-client python py-boto py-dateutil py-httplib2 py-jinja2 py-paramiko py-pip py-setuptools py-yaml tar unzip
+        apk add --update openssl openssh-client python py-boto py-dateutil py-httplib2 py-jinja2 py-paramiko py-pip py-setuptools py-yaml
   - run:
       name: Download and Install Packer
       command: |
