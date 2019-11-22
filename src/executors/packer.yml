@@ -4,5 +4,4 @@ description: |
 resource_class: medium
 
 docker:
-  - image: alpine:latest
-  
+  - image: python:3.6.9-alpine3.10
