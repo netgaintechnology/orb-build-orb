@@ -1,5 +1,5 @@
 description: |
-  Docker image for Packer on alpine linux
+  Docker image for Packer on alpine linux.
 
 resource_class: medium
 
