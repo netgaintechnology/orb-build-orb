@@ -146,7 +146,6 @@ workflows:
           name: dev-promote-patch
           orb-name: netgaintechnology/build-orb
           ssh-fingerprints: 9d:71:05:ff:1f:30:b2:c4:0b:9e:27:a9:09:d8:d0:c1
-          cleanup-tags: true
           requires: *prod-deploy_requires
           filters:
             branches:
@@ -159,7 +158,6 @@ workflows:
           release: minor
           orb-name: netgaintechnology/build-orb
           ssh-fingerprints: 9d:71:05:ff:1f:30:b2:c4:0b:9e:27:a9:09:d8:d0:c1
-          cleanup-tags: true
           requires: *prod-deploy_requires
           filters:
             branches:
@@ -172,7 +170,6 @@ workflows:
           release: major
           orb-name: netgaintechnology/build-orb
           ssh-fingerprints: 9d:71:05:ff:1f:30:b2:c4:0b:9e:27:a9:09:d8:d0:c1
-          cleanup-tags: true
           requires: *prod-deploy_requires
           filters:
             branches:
